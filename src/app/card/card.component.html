@@ -2,7 +2,7 @@
 <h2 class="card-header" [ngStyle]="{
   color: card.title.length < 5 ? 'black' : 'green',
   fontWeight: card.title.length < 7 ? '500' : '700'
-}">{{ card.title }}</h2>
+}">{{ index }} {{ card.title }}</h2>
 
 <p class="text" [ngClass]="{
   red: textColor === 'red',
@@ -31,6 +31,10 @@
 <!-- <div>
   <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">
 </div> -->
+
+<div>
+  <p>{{ cardDate | date:'dd MMM yyyy HH:mm' }}</p>
+</div>
 
 <div>
   <input type="text" [(ngModel)]="card.title" >
