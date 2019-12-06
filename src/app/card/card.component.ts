@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Card } from '../app.component';
 
 @Component({
   selector: 'app-card',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  @Input() card: Card;
+
   title = 'My Card Title';
-  mySampleText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.';
+  text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.';
 
   ngOnInit() {}
 
@@ -16,7 +19,7 @@ export class CardComponent implements OnInit {
   }
 
   changeTitle() {
-    this.title = 'Title has been changed';
+    this.card.title = 'Title has been changed';
   }
 
   // inputHandler(value: string) {
