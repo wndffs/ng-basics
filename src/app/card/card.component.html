@@ -1,10 +1,32 @@
 <div class="card">
-<h2 class="card-header">{{ title }}</h2>
-<p>{{ mySampleText }}</p>
+<h2 class="card-header" [ngStyle]="{
+  color: title.length < 5 ? 'black' : 'green',
+  fontWeight: title.length < 7 ? '500' : '700'
+}">{{ title }}</h2>
+<p class="text" [ngClass]="{
+  red: textColor === 'red',
+  blue: textColor === 'blue',
+  orange: textColor === 'orange'
+}">{{ mySampleText }}</p>
+
 <p>{{ getInfo() }}</p>
-<div>
-  <img [src]="imgUrl" alt="img">
-  <br>
-  <button [disabled]="disabled">Enable</button>
+
+<div class="btns">
+  <button (click)="changeTitle()">Change title</button>
+  <button (click)="title = 'Inline title'">Change inline title</button>
 </div>
+
+<div class="btns">
+  <button (click)="textColor = 'red'">Text red</button>
+  <button (click)="textColor = 'blue'">Text blue</button>
+  <button (click)="textColor = 'orange'">Text orange</button>
+</div>
+<!-- <div>
+  <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">
+</div> -->
+
+<div>
+  <input type="text" [(ngModel)]="title" >
+</div>
+
 </div>

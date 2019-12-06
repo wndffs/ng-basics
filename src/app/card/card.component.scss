@@ -6,3 +6,20 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.btns {
+  margin-bottom: 5px;
+}
+
+.text {
+  font-size: 1.5rem;
+  &.red {
+    color: red;
+  }
+  &.blue {
+    color: blue;
+  }
+  &.orange {
+    color: orange;
+  }
+}
